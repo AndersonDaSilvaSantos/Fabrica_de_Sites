@@ -31,11 +31,20 @@ class Funcionario(Base):
     twitter = models.CharField('Twitter', max_length=100, default='#')
     instagram = models.CharField('Insta', max_length=100, default='#')
 
+    class Meta:
+        verbose_name = 'Funcionário'
+        verbose_name_plural = 'Funcionários'
 
-class Servicos(Base):
+
+
+class Servico(Base):
     imagem = StdImageField('Imagem', upload_to='servicos',
                            variations={'thumb': {'width': 1000,
                                                  'height': 667,
                                                  'crop': True}})
     nome = models.CharField('Nome', max_length=50)
     descricao = models.TextField('Descricao', max_length=500)
+
+    class Meta:
+        verbose_name = 'Serviço'
+        verbose_name_plural = 'Serviços'
