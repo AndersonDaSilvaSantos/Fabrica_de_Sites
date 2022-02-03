@@ -130,3 +130,19 @@ MEDIA_ROOT = os.path.join(BASE_DIR,'mediafiles')
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# email para testes
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+"""
+# para email em produção
+EMAIL_HOST = 'localhost'
+EMAIL_HOST_USER = 'anderson_silva@fabricasites.com.br'
+EMAIL_PORT = 578
+EMAIL_USE_TSL = True
+EMAIL_HOST_PASSWORD = 'suasenha123'
+DEFAULT_FROM_EMAIL = 'contato@fabricasites.com.br'
+"""
+
+LOGOUT_REDIRECT_URL = 'core:index'
+
