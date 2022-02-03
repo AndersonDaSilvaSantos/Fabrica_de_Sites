@@ -4,7 +4,7 @@ from .models import Cargo, Funcionario, Servico
 
 @admin.register(Cargo)
 class CargoAdmin(admin.ModelAdmin):
-    pass
+    list_display = ('cargo',)
 
 
 @admin.register(Funcionario)

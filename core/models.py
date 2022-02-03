@@ -14,10 +14,12 @@ class Base(models.Model):
 class Cargo(models.Model):
     cargo = models.CharField(max_length=100)
 
-
     class Meta:
         verbose_name = 'Cargo'
         verbose_name_plural = 'Cargos'
+
+        def __str__(self):
+            return self.cargo
 
 class Funcionario(Base):
     nome = models.CharField('Nome', max_length=255)
@@ -36,6 +38,9 @@ class Funcionario(Base):
         verbose_name_plural = 'Funcionários'
 
 
+    def __str__(self):
+        return self.nome
+
 
 class Servico(Base):
     imagem = StdImageField('Imagem', upload_to='servicos',
@@ -48,3 +53,6 @@ class Servico(Base):
     class Meta:
         verbose_name = 'Serviço'
         verbose_name_plural = 'Serviços'
+
+    def __str__(self):
+        return self.nome
